@@ -39,9 +39,11 @@ def cached_files():
 
 
 def get_next_word(text, match):
-    sl = text.split()
-    all_is = [sl[i + 1] for i, word in enumerate(sl[:-1]) if word == match]
-    return all_is[0]
+    list_text = text.split()
+    password = [
+        list_text[i + 1] for i, word in enumerate(list_text[:-1]) if match in word
+    ]
+    return password[0]
 
 
 def find_password(list):
