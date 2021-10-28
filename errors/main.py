@@ -20,57 +20,24 @@ def main():
 to Ask for Forgiveness than Permission (EAFP)"""
 
 
-# Returns the addition of x and y if it's defined, otherwise returns 0
-# def add(x, y):
-#     if type(x) is str and (type(y) is int or type(y) is float):
-#         return 0
-#     elif type(y) is str and (type(x) is int or type(x) is float):
-#         return 0
-#     return x + y
-
 def add(x, y):
     try:
         return x + y
-    except TypeError as err:
+    except TypeError:
         return 0
 
-# Returns the contents of the file at 'filename', or an empty string if the
-# file does not exist
-# def read_file(filename):
-#     if os.path.exists(filename):
-#         return open(filename, "r").read()
-#     else:
-#         return ""
 
 def read_file(filename):
     try:
         return open(filename, "r").read()
-    except BaseException as err:
+    except FileNotFoundError:
         return ""
 
-# Returns item at `index` from list `l` if possible, otherwise returns None
-# def get_item_from_list(l, index):
-#     max_index = len(l) - 1
-#     min_index = -1 - max_index
-#     if index <= max_index and index >= min_index:
-#         return l[index]
-#     else:
-#         return None
 
 def get_item_from_list(l, index):
-    max_index = len(l) - 1
-    min_index = -1 - max_index
-    if index <= max_index and index >= min_index:
+    try:
         return l[index]
-    else:
-        return None
-        
-def get_item_from_list(l, index):
-    max_index = len(l) - 1
-    min_index = -1 - max_index
-    if index <= max_index and index >= min_index:
-        return l[index]
-    else:
+    except:
         return None
 
 
