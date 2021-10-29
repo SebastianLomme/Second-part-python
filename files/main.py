@@ -47,4 +47,5 @@ def find_password(list):
             password = get_next_word(read_file, "password:")
             return password
 
+
 print(sys.platform)

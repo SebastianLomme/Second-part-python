@@ -1,6 +1,6 @@
 # Do not modify these lines
-__winc_id__ = '04da020dedb24d42adf41382a231b1ed'
-__human_name__ = 'classes'
+__winc_id__ = "04da020dedb24d42adf41382a231b1ed"
+__human_name__ = "classes"
 
 # Add your code after this line
 
@@ -23,18 +23,19 @@ class Player:
         return f"Hello everyone, my name is {self.name}."
 
     def strength(self):
-        sorted_list = sorted([("speed", self.speed),("endurance", self.endurance), ("accuracy", self.accuracy)], key=lambda list: list[1], reverse=True)
+        sorted_list = sorted(
+            [
+                ("speed", self.speed),
+                ("endurance", self.endurance),
+                ("accuracy", self.accuracy),
+            ],
+            key=lambda list: list[1],
+            reverse=True,
+        )
         return sorted_list[0]
 
 
-sebastian = Player("Sebastian", 0.8, 0.6, 0.8)
-# print(sebastian.strength())
-# print(sebastian.introduce())
-
-
-# print(sebastian.speed)
-
-class Commentator():
+class Commentator:
     def __init__(self, name):
         self.name = name
 
@@ -42,8 +43,8 @@ class Commentator():
         return player.speed + player.endurance + player.accuracy
 
     def compare_players(self, play_1, play_2, strength):
-        player_one_strength = getattr(play_1,strength)
-        player_two_strength = getattr(play_2,strength)
+        player_one_strength = getattr(play_1, strength)
+        player_two_strength = getattr(play_2, strength)
         if player_one_strength > player_two_strength:
             return play_1.name
         elif player_one_strength < player_two_strength:
@@ -61,13 +62,10 @@ class Commentator():
             print("test1")
             return play_2.name
         else:
-            return 'These two players might as well be twins!'
-        
+            return "These two players might as well be twins!"
+
 
 ray = Commentator("Ray Hudson")
-alice = Player('Alice', 0.8, 0.2, 0.6)
-bob = Player('Bob', 0.8, 0.2, 0.6)
-print(ray.compare_players(alice, bob, 'endurance'))
-# print(ray.sum_player(bob))
-# print(ray.name)
-# print(sebastian.sum_player())
+alice = Player("Alice", 0.8, 0.2, 0.6)
+bob = Player("Bob", 0.8, 0.2, 0.6)
+print(ray.compare_players(alice, bob, "endurance"))
