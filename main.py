@@ -1,18 +1,10 @@
-# def multiply_a(a, b):
-#     return a * b
+class Person():
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-# def multiply_b(a, b):
-#     return multiply_a(a, b)
+bob = Person("Bob", 30)
+Sebastian = Person("Sebastian", 32)
 
-# def multiply_c(a, b):
-#     return multiply_b(a, b)
-
-# print(multiply_c(3, 5))
-# print(multiply_c('incoming', 'error'))
-
-
-def divide(a, b):
-    return a / b
-
-
-divide(2, 0)
+print(bob.name)
+print(Sebastian.name)

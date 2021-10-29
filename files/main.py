@@ -3,6 +3,7 @@ __human_name__ = "files"
 
 from zipfile import ZipFile
 import os
+import sys
 
 currentPath = os.path.dirname(__file__)
 path = os.path.join(currentPath, "cache")
@@ -45,3 +46,5 @@ def find_password(list):
         if "password:" in read_file:
             password = get_next_word(read_file, "password:")
             return password
+
+print(sys.platform)
