@@ -7,7 +7,8 @@ import sys
 
 currentPath = os.path.dirname(__file__)
 path = os.path.join(currentPath, "cache")
-
+print("Path: ", os.path.dirname(__file__))
+print("cwd: ", os.path.realpath(__file__))
 
 def clean_cache():
     try:
